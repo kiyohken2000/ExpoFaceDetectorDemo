@@ -22,6 +22,7 @@
       "bundleIdentifier": "reactnative.expo.facedector.demo",
       "buildNumber": "1.0.0",
       "infoPlist": {
+        "NSCameraUsageDescription": "顔写真撮影のためにカメラを使用します。",
         "NSPhotoLibraryUsageDescription": "Use the photo library to change your avatar.",
         "CFBundleDevelopmentRegion":"ja_JP"
       },

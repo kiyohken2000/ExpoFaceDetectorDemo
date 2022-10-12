@@ -1,4 +1,4 @@
-# Expo face detector Demo
+# Expo Face Detector Demo
 
 ## Install
 
