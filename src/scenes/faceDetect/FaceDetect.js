@@ -16,6 +16,7 @@ export default function FaceDetect() {
   const [type, setType] = useState(Camera.Constants.Type.front)
   const [camera, setCamera] = useState(null)
   const [timer, setTimer] = useState(timerData[0])
+  const [isShowCountDown, setIsShowCountDown] = useState(false)
 
   useFocusEffect(useCallback(() => {
     setIsScanning(true)
@@ -62,6 +63,9 @@ export default function FaceDetect() {
 
   const takePicture = async () => {
     if (camera) {
+      if(timer.value >= 1) {
+        setIsShowCountDown(true)
+      }
       await sleep(timer.value*1000)
       const image = await camera.takePictureAsync();
       console.log(image)
@@ -92,6 +96,8 @@ export default function FaceDetect() {
             takePicture={takePicture}
             setTimer={setTimer}
             timer={timer}
+            isShowCountDown={isShowCountDown}
+            setIsShowCountDown={setIsShowCountDown}
           />
         </Camera>
         :null
