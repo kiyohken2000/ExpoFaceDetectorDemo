@@ -68,6 +68,7 @@ export default function FaceDetect() {
       }
       await sleep(timer.value*1000)
       const image = await camera.takePictureAsync();
+      setIsShowCountDown(false)
       console.log(image)
     }
   };

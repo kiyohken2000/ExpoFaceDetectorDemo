@@ -6,7 +6,7 @@ import CountDown from 'react-native-countdown-component';
 import { colors } from "../../theme";
 
 export default function Buttons(props) {
-  const { onCameraRevers, takePicture, timer, setTimer, isShowCountDown, setIsShowCountDown } = props
+  const { onCameraRevers, takePicture, timer, setTimer, isShowCountDown } = props
 
   return (
     <View style={styles.container}>
@@ -25,7 +25,7 @@ export default function Buttons(props) {
           :
           <CountDown
             until={timer.value}
-            onFinish={() => setIsShowCountDown(false)}
+            onFinish={() => console.log('timer end')}
             size={15}
             timeToShow={['S']}
             digitStyle={{backgroundColor: colors.white, borderWidth: 2, borderColor: colors.yellow}}
