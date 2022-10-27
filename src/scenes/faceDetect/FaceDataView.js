@@ -3,9 +3,10 @@ import { View, Text, StyleSheet, Dimensions } from "react-native";
 import { colors } from "../../theme";
 import FaceOutline from "./FaceOutline";
 import FaceLandmark from "./FaceLandmark";
+import Combine from "./Combine";
 
 export default function FaceDataView(props) {
-  const { faceData } = props
+  const { faceData, stamp } = props
 
   if(faceData.length === 0) {
     return (
@@ -53,6 +54,7 @@ export default function FaceDataView(props) {
           <FaceLandmark point={rightEarPosition} />
           <FaceLandmark point={rightEyePosition} />
           <FaceLandmark point={rightMouthPosition} />
+          <Combine bounds={bounds} stamp={stamp} />
         </View>
       );
     })}

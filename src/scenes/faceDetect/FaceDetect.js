@@ -7,6 +7,7 @@ import { useFocusEffect, useNavigation } from "@react-navigation/native";
 import FaceDataView from "./FaceDataView";
 import Buttons from "./Buttons";
 import { timerData } from "./timerData";
+import StampSelector from "./StampSelector";
 
 export default function FaceDetect() {
   const [hasPermission, setHasPermission] = useState(false)
@@ -17,6 +18,7 @@ export default function FaceDetect() {
   const [camera, setCamera] = useState(null)
   const [timer, setTimer] = useState(timerData[0])
   const [isShowCountDown, setIsShowCountDown] = useState(false)
+  const [stamp, setStamp] = useState('')
 
   useFocusEffect(useCallback(() => {
     setIsScanning(true)
@@ -73,6 +75,10 @@ export default function FaceDetect() {
     }
   };
 
+  const onStampPress = ({item}) => {
+    setStamp(item.source)
+  }
+
   return (
     <ScreenTemplate screen='FaceDetect' statusBar='light-content'>
       {isScanning?
@@ -91,7 +97,10 @@ export default function FaceDetect() {
             tracking: true
           }}
         >
-          <FaceDataView faceData={faceData} />
+          <FaceDataView faceData={faceData} stamp={stamp} />
+          <StampSelector
+            onStampPress={onStampPress}
+          />
           <Buttons
             onCameraRevers={onCameraRevers}
             takePicture={takePicture}
