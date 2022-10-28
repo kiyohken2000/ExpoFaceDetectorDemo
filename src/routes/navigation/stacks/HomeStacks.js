@@ -4,6 +4,7 @@ import { navigationProps } from './navigationProps/navigationProps'
 
 import Home from '../../../scenes/home'
 import FaceDetect from '../../../scenes/faceDetect'
+import ColorPick from '../../../scenes/ColorPick'
 
 const Stack = createStackNavigator()
 
@@ -26,6 +27,13 @@ export const HomeStacks = () => {
         component={FaceDetect}
         options={({ navigation }) => ({
           title: '顔認識',
+        })}
+      />
+      <Stack.Screen
+        name="ColorPick"
+        component={ColorPick}
+        options={({ navigation }) => ({
+          title: '色認識',
         })}
       />
     </Stack.Navigator>

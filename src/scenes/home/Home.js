@@ -1,10 +1,10 @@
 import React, { useContext, useEffect } from 'react'
 import { StyleSheet, Text, View, StatusBar, SafeAreaView } from 'react-native'
-import Button from 'components/Button'
-import { colors, fontSize } from 'theme'
+import { colors, fontSize } from '../../theme'
 import { useNavigation } from '@react-navigation/native'
 import { UserContext } from '../../contexts/UserContext'
 import ScreenTemplate from '../../components/ScreenTemplate'
+import Button from '../../components/Button'
 
 export default function Home() {
   const navigation = useNavigation()
@@ -19,11 +19,18 @@ export default function Home() {
       <View style={styles.root}>
         <Text style={styles.title}>Home</Text>
         <Button
-          title="撮影画面へ"
-          color="white"
-          backgroundColor={colors.lightPurple}
+          label="撮影画面へ"
+          color={colors.lightPurple}
           onPress={() => {
             navigation.navigate('FaceDetect')
+          }}
+        />
+        <View style={{paddingVertical: 10}} />
+        <Button
+          label="色認識画面へ"
+          color={colors.lightPurple}
+          onPress={() => {
+            navigation.navigate('ColorPick')
           }}
         />
       </View>

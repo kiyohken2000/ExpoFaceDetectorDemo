@@ -34,6 +34,7 @@
     "react-native": "0.68.2",
     "react-native-countdown-component": "^2.7.1",
     "react-native-gesture-handler": "~2.2.1",
+    "react-native-image-base64": "^0.1.4",
     "react-native-image-colors": "^1.5.1",
     "react-native-image-crop-picker": "^0.38.1",
     "react-native-material-menu": "^2.0.0",
