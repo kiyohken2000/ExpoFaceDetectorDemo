@@ -5,8 +5,6 @@ import { colors } from 'theme'
 
 // stack navigators
 import { HomeStacks } from '../stacks/HomeStacks'
-import { ProfileStacks } from '../stacks/ProfileStacks'
-import { ReadWriteStacks } from '../stacks/ReadWriteStacks'
 
 const Tab = createBottomTabNavigator()
 
