@@ -1,10 +1,23 @@
 # Expo Face Detector Demo
 
+## Require
+
+- Expo account
+- expo-cli
+- eas-cli
+- yarn
+
 ## Install
 
 ```
 yarn install
 ```
+
+## Usage
+
+1. Login your Expo account
+1. EAS build
+1. Install APK or IPA on your real device
 
 ## Run
 
@@ -12,27 +25,27 @@ yarn install
 yarn start
 ```
 
-# EAS command
+### Commands
 
 ```
-// ビルド:開発用バイナリ
+// build: develop
 eas build --profile development --platform ios
 eas build --profile development --platform android
 
-// ビルド:内部配布バイナリ
+// build: internal
 eas build --profile preview --platform ios
 eas build --profile preview --platform android
 
-// ビルド:プロダクション
+// build: production
 eas build --profile production --platform ios
 eas build --profile production --platform android
 
-// OTAアップデート
+// OTA update
 expo publish --release-channel internal
 expo publish --release-channel production
 
-// iOS用:デバイス登録(開発用と内部配布バイナリのインストールに必須)
+// iOS: Setting up ad hoc provisioning
 eas device:create
-// 登録済みiPhoneの表示
+// list all registered devices for your account
 eas device:list
 ```
